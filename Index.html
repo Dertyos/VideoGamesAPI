@@ -1,0 +1,130 @@
+<!DOCTYPE DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Games - Descubre los Mejores Juegos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="svg/tittle-icon.svg" width="32" height="32" alt="Video Games Explorer">
+                    <span>Video Games Explorer</span>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn-favorites" id="btnFavorites">
+                        <img src="svg/heart-full.svg" width="20" height="20" alt="Favoritos">
+                        <span class="favorites-count">0</span>
+                    </button>
+                    
+                    <button class="btn-theme" id="btnTheme" aria-label="Cambiar tema">
+                        <img class="sun-icon" src="svg/theme-light.svg" width="20" height="20" alt="Tema claro">
+                        <img class="moon-icon" src="svg/theme-dark.svg" width="20" height="20" alt="Tema oscuro">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Descubre Tu Próximo<br><span class="gradient-text">Juego Favorito</span></h1>
+                <p class="hero-subtitle">Explora miles de juegos, guarda tus favoritos y encuentra tu próxima aventura</p>
+                
+                <!-- Barra de Busqueda -->
+                <div class="search-container">
+                    <div class="search-field">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Busca juegos por nombre, género, plataforma...">
+                    </div>
+                    <button class="btn-search" id="btnSearch">Buscar</button>
+                </div>
+
+                <!-- Panel de busquedas recientes -->
+                <div class="recent-searches" id="recentSearches"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="action">Acción</button>
+                <button class="filter-btn" data-filter="adventure">Aventura</button>
+                <button class="filter-btn" data-filter="rpg">RPG</button>
+                <button class="filter-btn" data-filter="shooter">Shooter</button>
+                <button class="filter-btn" data-filter="strategy">Estrategia</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de carga de contenido  -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Cargando juegos épicos...</p>
+    </div>
+
+    <!-- Consolidado de Juegos -->
+    <section class="games-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="sectionTitle">Los mas populares!</h2>
+                <p class="section-subtitle" id="sectionSubtitle">Nuestro consolidado especial</p>
+            </div>
+            <div class="games-grid" id="gamesGrid"></div>
+            <button class="btn-load-more" id="btnLoadMore">Mostrar Más (+)</button>
+        </div>
+    </section>
+
+    <!-- Sección de Favoritos -->
+    <div class="modal" id="favoritesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Mis Favoritos
+                </h2>
+                <button class="btn-close" id="btnCloseModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="favoritesContent"></div>
+        </div>
+    </div>
+
+    <!-- Detalles del Videojuego -->
+    <div class="modal" id="gameDetailModal">
+        <div class="modal-content modal-large">
+            <button class="btn-close" id="btnCloseDetailModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="gameDetailContent"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
